@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blood Glucose Forecasting</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  
+  <!-- LOGO (ثابت أعلى اليمين) -->
+  <header class="app-header">
+    <img src="/static/img/logo.png" alt="App Logo" class="app-logo">
+  </header>
+
+  <!-- باقي محتوى الصفحة -->
+  <main class="app-container">
+    ...
+  </main>
+  <!-- Section 1 -->
+  <section id="home" class="section">
+    <div class="container center">
+      <h1 class="title">Blood Glucose Forecasting</h1>
+      <button id="startBtn" class="btn primary">Start</button>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="predict" class="section">
+    <div class="container">
+      <h2 class="h2">Your glucose level in one hour</h2>
+      <p class="text">
+         Get an estimate of your glucose level one hour from now :
+      </p>
+
+      <div class="row">
+        <button id="predictBtn" class="btn primary">Run Forecast</button>
+        <button id="backHomeBtn" class="btn">Back</button>
+      </div>
+
+      <div id="loading" class="notice hidden">Loading forecast...</div>
+      <div id="error" class="notice error hidden"></div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="results" class="section">
+    <div class="container">
+      <h2 class="h2">Results</h2>
+
+      <div class="cards">
+        <div class="card">
+          <div class="label">Predicted after 1 hour</div>
+          <div id="after1h" class="value">--</div>
+        </div>
+        <div class="card">
+          <div class="label">Risk</div>
+          <div id="riskLabel" class="value">--</div>
+        </div>
+      </div>
+
+      <div class="chartWrap">
+        <canvas id="chart" height="120"></canvas>
+      </div>
+
+      <div class="card advice">
+        <div class="label">LLM Recommendation</div>
+        <div id="llmAdvice" class="text">--</div>
+      </div>
+
+      <div class="row">
+        <button id="againBtn" class="btn primary">Predict Again</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

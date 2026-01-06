@@ -1,0 +1,93 @@
+:root {
+  --bg: #ffffff;
+  --fg: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --primary: #1d4ed8;
+  --primary2: #1e40af;
+  --card: #f8fafc;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; color: var(--fg); background: var(--bg); }
+.section { min-height: 100vh; display: flex; align-items: center; padding: 48px 16px; }
+.container { width: min(980px, 100%); margin: 0 auto; }
+.center { text-align: center; }
+
+.title { font-size: clamp(36px, 6vw, 64px); margin: 0 0 12px; letter-spacing: -0.5px; }
+.subtitle { color: var(--muted); font-size: 18px; margin: 0 0 20px; }
+.h2 { font-size: 28px; margin: 0 0 12px; }
+.text { color: var(--muted); line-height: 1.6; }
+
+.row { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+.btn {
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--fg);
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.primary {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+.btn.primary:hover { background: var(--primary2); }
+
+.notice {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: #1e3a8a;
+}
+.notice.error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+.hidden { display: none; }
+
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+.card .label { color: var(--muted); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+.card .value { font-size: 22px; font-weight: 800; margin-top: 6px; }
+.card.advice { margin-top: 14px; }
+.chartWrap {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+}
+@media (max-width: 640px) {
+  .cards { grid-template-columns: 1fr; }
+}
+
+/* ===== Fixed Logo Top Right ===== */
+.app-header {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 9999;
+}
+
+.app-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+}
+
+/* مساحة من الأعلى فقط حتى لا يتداخل المحتوى */
+body {
+  margin: 0;
+  padding-top: 90px;
+}
